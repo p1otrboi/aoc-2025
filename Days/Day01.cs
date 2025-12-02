@@ -1,6 +1,6 @@
 namespace aoc_2025.Days;
 
-public class Day01 : BaseDay
+public sealed class Day01 : BaseDay
 {
     private readonly string[] _lines;
     public Day01() => _lines = File.ReadAllLines(InputFilePath);
@@ -16,8 +16,8 @@ public class Day01 : BaseDay
             int operation = line[0] == 'L' ? -clicks : clicks;
 
             dial = (dial + operation) % 100;
-        
-            if (dial < 0) 
+
+            if (dial < 0)
                 dial += 100;
 
             if (dial == 0)
@@ -41,17 +41,17 @@ public class Day01 : BaseDay
             if (dir == 'R')
             {
                 first = (100 - start) % 100;
-                if (first == 0) 
+                if (first == 0)
                     first = 100;
                 dial = (start + clicks) % 100;
             }
             else
             {
                 first = start % 100;
-                if (first == 0) 
+                if (first == 0)
                     first = 100;
                 dial = (start - clicks) % 100;
-                if (dial < 0) 
+                if (dial < 0)
                     dial += 100;
             }
 
@@ -61,5 +61,3 @@ public class Day01 : BaseDay
         return new(zeroes.ToString());
     }
 }
-
-
