@@ -32,9 +32,9 @@ public sealed class Day05 : BaseDay
 
         foreach (var id in _idList)
         {
-            foreach (var range in _ranges)
+            foreach (var (start, end) in _ranges)
             {
-                if (id >= range.Item1 && id <= range.Item2)
+                if (id >= start && id <= end)
                 {
                     freshIds++;
                     break;
