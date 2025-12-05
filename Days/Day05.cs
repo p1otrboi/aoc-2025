@@ -34,7 +34,7 @@ public sealed class Day05 : BaseDay
         {
             foreach (var (start, end) in _ranges)
             {
-                if (id >= start && id <= end)
+                if (start <= id && id <= end)
                 {
                     freshIds++;
                     break;
